@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>VKP Water Can & Laundry Services – Pure Water & Perfect Press</title>
+<meta name="description" content="VKP Water Can & Laundry Services – Clean drinking water delivery and professional ironing services at your doorstep in Cheyyur, Tamil Nadu.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;600;700;800&family=Noto+Serif:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --blue-deep: #0a2540;
+    --blue-mid: #1a56a0;
+    --blue-bright: #2979e8;
+    --blue-light: #e8f2ff;
+    --teal: #0db6c9;
+    --teal-light: #d0f5f9;
+    --gold: #f5a623;
+    --white: #ffffff;
+    --grey-soft: #f5f8fc;
+    --grey-text: #5a6a7e;
+    --text-dark: #0f1f35;
+    --radius: 16px;
+    --shadow: 0 8px 32px rgba(10,37,64,0.10);
+    --shadow-lg: 0 20px 60px rgba(10,37,64,0.15);
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Sora', sans-serif; color: var(--text-dark); background: var(--white); overflow-x: hidden; }
+
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(255,255,255,0.92); backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(41,121,232,0.10);
+    padding: 0 5%; height: 64px;
+    display: flex; align-items: center; justify-content: space-between;
+    box-shadow: 0 2px 16px rgba(10,37,64,0.06);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+  .nav-logo-icon { width: 38px; height: 38px; background: linear-gradient(135deg, var(--blue-bright), var(--teal)); border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 20px; }
+  .nav-logo-text { font-size: 1.1rem; font-weight: 800; color: var(--blue-deep); letter-spacing: -0.02em; }
+  .nav-logo-text span { color: var(--blue-bright); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--grey-text); font-size: 0.9rem; font-weight: 600; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--blue-bright); }
+  .nav-cta { background: linear-gradient(135deg, var(--blue-bright), var(--teal)); color: white; border: none; border-radius: 100px; padding: 9px 22px; font-size: 0.88rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: transform 0.2s, box-shadow 0.2s; box-shadow: 0 4px 14px rgba(41,121,232,0.35); }
+  .nav-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(41,121,232,0.45); }
+  .hamburger { display: none; flex-direction: column; gap: 5px; cursor: pointer; background: none; border: none; padding: 4px; }
+  .hamburger span { display: block; width: 24px; height: 2px; background: var(--blue-deep); border-radius: 2px; }
+
+  #home { padding-top: 64px; min-height: 100vh; background: linear-gradient(160deg, #0a2540 0%, #1a56a0 45%, #0db6c9 100%); position: relative; overflow: hidden; display: flex; align-items: center; }
+  .hero-bg-blobs { position: absolute; inset: 0; pointer-events: none; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(80px); opacity: 0.25; }
+  .blob-1 { width: 500px; height: 500px; background: #2979e8; top: -100px; right: -100px; }
+  .blob-2 { width: 350px; height: 350px; background: #0db6c9; bottom: 50px; left: -80px; }
+  .blob-3 { width: 250px; height: 250px; background: #f5a623; bottom: 150px; right: 200px; opacity: 0.15; }
+  .drops-container { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+  .drop { position: absolute; width: 6px; height: 9px; background: rgba(255,255,255,0.18); border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%; animation: fall linear infinite; }
+  @keyframes fall { 0% { transform: translateY(-20px) rotate(15deg); opacity: 0; } 10% { opacity: 1; } 90% { opacity: 0.5; } 100% { transform: translateY(105vh) rotate(15deg); opacity: 0; } }
+
+  .hero-content { position: relative; z-index: 2; width: 90%; max-width: 1100px; margin: 0 auto; padding: 60px 0; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+  .hero-badge { display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.25); border-radius: 100px; padding: 6px 16px; font-size: 0.78rem; font-weight: 600; color: #d4eeff; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 20px; }
+  .hero-badge::before { content: '●'; color: #4aeac5; font-size: 10px; }
+  .hero-title { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; color: white; line-height: 1.1; letter-spacing: -0.03em; margin-bottom: 12px; }
+  .hero-title .accent { color: var(--teal); }
+  .hero-tagline { font-family: 'Noto Serif', serif; font-size: clamp(1rem, 2vw, 1.2rem); color: rgba(255,255,255,0.80); font-style: italic; margin-bottom: 28px; line-height: 1.6; }
+  .hero-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 36px; }
+  .pill { background: rgba(255,255,255,0.12); border: 1px solid rgba(255,255,255,0.2); border-radius: 100px; padding: 7px 16px; font-size: 0.82rem; font-weight: 600; color: white; display: flex; align-items: center; gap: 7px; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-primary { background: white; color: var(--blue-deep); border: none; border-radius: 100px; padding: 14px 30px; font-size: 0.95rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: all 0.25s; box-shadow: 0 6px 20px rgba(0,0,0,0.2); display: inline-flex; align-items: center; gap: 8px; }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+  .btn-wa { background: #25D366; color: white; border: none; border-radius: 100px; padding: 14px 30px; font-size: 0.95rem; font-weight: 700; cursor: pointer; text-decoration: none; transition: all 0.25s; box-shadow: 0 6px 20px rgba(37,211,102,0.35); display: inline-flex; align-items: center; gap: 8px; }
+  .btn-wa:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37,211,102,0.5); }
+
+  .hero-visual { display: flex; flex-direction: column; gap: 16px; }
+  .service-card-float { background: rgba(255,255,255,0.10); border: 1px solid rgba(255,255,255,0.20); backdrop-filter: blur(20px); border-radius: 20px; padding: 24px; animation: float 6s ease-in-out infinite; transition: transform 0.3s; }
+  .service-card-float:nth-child(2) { animation-delay: -3s; }
+  .service-card-float:hover { transform: translateY(-6px) scale(1.02); }
+  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
+  .scard-top { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+  .scard-icon { width: 48px; height: 48px; border-radius: 14px; background: linear-gradient(135deg, rgba(255,255,255,0.3), rgba(255,255,255,0.1)); display: flex; align-items: center; justify-content: center; font-size: 24px; border: 1px solid rgba(255,255,255,0.25); }
+  .scard-name { font-size: 1rem; font-weight: 700; color: white; }
+  .scard-sub { font-size: 0.78rem; color: rgba(255,255,255,0.65); }
+  .scard-price { font-size: 1.6rem; font-weight: 800; color: white; }
+  .scard-price span { font-size: 0.85rem; font-weight: 400; color: rgba(255,255,255,0.65); }
+  .scard-tags { display: flex; gap: 8px; margin-top: 12px; flex-wrap: wrap; }
+  .stag { background: rgba(255,255,255,0.15); border-radius: 100px; padding: 4px 12px; font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.9); }
+
+  .stats-bar { background: var(--blue-deep); padding: 28px 5%; }
+  .stats-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; }
+  .stat { text-align: center; }
+  .stat-num { font-size: 2rem; font-weight: 800; color: var(--teal); line-height: 1; }
+  .stat-label { font-size: 0.8rem; color: rgba(255,255,255,0.65); font-weight: 500; margin-top: 4px; }
+
+  section { padding: 90px 5%; }
+  .section-label { font-size: 0.75rem; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: var(--blue-bright); margin-bottom: 10px; }
+  .section-title { font-size: clamp(1.8rem, 3.5vw, 2.6rem); font-weight: 800; color: var(--blue-deep); letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 16px; }
+  .section-sub { font-size: 1rem; color: var(--grey-text); line-height: 1.7; max-width: 560px; }
+  .section-center { text-align: center; }
+  .section-center .section-sub { margin: 0 auto; }
+  .max-w { max-width: 1100px; margin: 0 auto; }
+
+  #services { background: var(--grey-soft); }
+  .services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; margin-top: 50px; }
+  .service-big-card { background: white; border-radius: 24px; overflow: hidden; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; }
+  .service-big-card:hover { transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+  .service-card-header { padding: 32px 32px 24px; background: linear-gradient(135deg, var(--blue-deep), var(--blue-mid)); position: relative; overflow: hidden; }
+  .service-card-header.teal-theme { background: linear-gradient(135deg, #0a4060, #0db6c9); }
+  .service-card-header-icon { font-size: 48px; margin-bottom: 14px; display: block; animation: float 5s ease-in-out infinite; }
+  .service-card-header h3 { font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 6px; }
+  .service-card-header p { font-size: 0.88rem; color: rgba(255,255,255,0.75); line-height: 1.6; }
+  .service-card-body { padding: 28px 32px; }
+  .feature-list { list-style: none; display: flex; flex-direction: column; gap: 12px; margin-bottom: 24px; }
+  .feature-list li { display: flex; align-items: flex-start; gap: 12px; font-size: 0.9rem; color: var(--text-dark); font-weight: 500; }
+  .feature-list li::before { content: '✓'; width: 22px; height: 22px; background: var(--blue-light); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 800; color: var(--blue-bright); flex-shrink: 0; margin-top: 1px; }
+  .price-tag { display: inline-flex; align-items: baseline; gap: 4px; background: linear-gradient(135deg, var(--blue-bright), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-size: 2rem; font-weight: 800; }
+  .price-tag .per { font-size: 0.9rem; -webkit-text-fill-color: var(--grey-text); }
+
+  #pricing { background: linear-gradient(180deg, #fff 0%, var(--blue-light) 100%); }
+  .pricing-table { background: white; border-radius: 24px; box-shadow: var(--shadow-lg); overflow: hidden; margin-top: 48px; }
+  .pricing-table-header { background: linear-gradient(135deg, var(--blue-deep), var(--blue-bright)); padding: 20px 32px; display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; }
+  .pricing-table-header span { font-size: 0.78rem; font-weight: 700; color: rgba(255,255,255,0.8); text-transform: uppercase; letter-spacing: 0.08em; }
+  .pricing-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 16px; padding: 20px 32px; border-bottom: 1px solid rgba(10,37,64,0.06); align-items: center; transition: background 0.2s; }
+  .pricing-row:last-child { border-bottom: none; }
+  .pricing-row:hover { background: var(--blue-light); }
+  .pr-name { display: flex; align-items: center; gap: 12px; }
+  .pr-icon { font-size: 22px; width: 40px; text-align: center; }
+  .pr-label { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); }
+  .pr-desc { font-size: 0.78rem; color: var(--grey-text); }
+  .pr-category { font-size: 0.75rem; font-weight: 700; border-radius: 100px; padding: 4px 12px; display: inline-block; text-align: center; }
+  .cat-water { background: var(--teal-light); color: #0a7a8a; }
+  .cat-iron { background: #fff3e0; color: #b36200; }
+  .pr-price { font-size: 1.2rem; font-weight: 800; background: linear-gradient(135deg, var(--blue-bright), var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+  #order { background: var(--grey-soft); }
+  .order-layout { display: grid; grid-template-columns: 1fr 1.3fr; gap: 48px; margin-top: 48px; align-items: start; }
+  .info-card { background: white; border-radius: 20px; padding: 24px; box-shadow: var(--shadow); margin-bottom: 20px; display: flex; gap: 16px; align-items: flex-start; transition: transform 0.2s; }
+  .info-card:hover { transform: translateX(4px); }
+  .info-card-icon { width: 48px; height: 48px; border-radius: 14px; flex-shrink: 0; display: flex; align-items: center; justify-content: center; font-size: 22px; }
+  .ic-blue { background: var(--blue-light); } .ic-green { background: #e6fff3; } .ic-gold { background: #fff8e6; }
+  .info-card h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-dark); margin-bottom: 4px; }
+  .info-card p { font-size: 0.82rem; color: var(--grey-text); line-height: 1.6; }
+  .wa-order-btn { display: flex; align-items: center; gap: 12px; width: 100%; background: linear-gradient(135deg, #25D366, #128C7E); color: white; border: none; border-radius: 16px; padding: 18px 24px; font-size: 1rem; font-weight: 700; cursor: pointer; text-decoration: none; box-shadow: 0 6px 20px rgba(37,211,102,0.35); transition: transform 0.25s, box-shadow 0.25s; margin-top: 8px; }
+  .wa-order-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(37,211,102,0.5); }
+  .order-form { background: white; border-radius: 24px; padding: 40px; box-shadow: var(--shadow-lg); }
+  .order-form h3 { font-size: 1.4rem; font-weight: 800; color: var(--blue-deep); margin-bottom: 8px; }
+  .form-sub { font-size: 0.85rem; color: var(--grey-text); margin-bottom: 28px; }
+  .form-group { margin-bottom: 20px; }
+  .form-group label { display: block; font-size: 0.82rem; font-weight: 700; color: var(--text-dark); margin-bottom: 8px; }
+  .form-group label span { color: #e03; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; border: 2px solid #e5edf8; border-radius: 12px; padding: 12px 16px; font-family: 'Sora', sans-serif; font-size: 0.9rem; color: var(--text-dark); background: var(--grey-soft); transition: border-color 0.2s; outline: none; }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--blue-bright); background: white; box-shadow: 0 0 0 4px rgba(41,121,232,0.10); }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .service-toggle { display: flex; gap: 10px; flex-wrap: wrap; }
+  .toggle-opt { display: none; }
+  .toggle-label { padding: 10px 18px; border-radius: 100px; border: 2px solid #e5edf8; background: var(--grey-soft); font-size: 0.85rem; font-weight: 600; color: var(--grey-text); cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 7px; }
+  .toggle-opt:checked + .toggle-label { border-color: var(--blue-bright); background: var(--blue-light); color: var(--blue-bright); }
+  .submit-btn { width: 100%; padding: 16px; border: none; border-radius: 14px; background: linear-gradient(135deg, var(--blue-bright), var(--teal)); color: white; font-family: 'Sora', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; box-shadow: 0 6px 20px rgba(41,121,232,0.35); transition: transform 0.25s, box-shadow 0.25s; margin-top: 8px; }
+  .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(41,121,232,0.45); }
+  .success-msg { display: none; background: #e6fff3; border: 2px solid #4ae06a; border-radius: 14px; padding: 20px; text-align: center; margin-top: 16px; }
+  .success-msg .check { font-size: 36px; display: block; margin-bottom: 8px; }
+  .success-msg p { font-size: 0.9rem; font-weight: 600; color: #0a7a3a; }
+
+  #about { background: white; }
+  .about-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-top: 48px; }
+  .about-card-main { background: linear-gradient(135deg, var(--blue-deep), var(--blue-bright)); border-radius: 28px; padding: 40px; color: white; box-shadow: var(--shadow-lg); }
+  .about-card-main .big-num { font-size: 4rem; font-weight: 800; line-height: 1; background: linear-gradient(135deg, white, var(--teal)); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-bottom: 8px; }
+  .about-badge-float { position: absolute; bottom: -20px; right: -20px; background: white; border-radius: 20px; padding: 18px 22px; box-shadow: var(--shadow-lg); display: flex; align-items: center; gap: 12px; animation: float 5s ease-in-out infinite; }
+  .about-visual { position: relative; }
+  .about-content p { font-size: 0.95rem; color: var(--grey-text); line-height: 1.8; margin-bottom: 16px; }
+  .about-content p strong { color: var(--blue-deep); }
+  .value-chips { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 24px; }
+  .chip { display: flex; align-items: center; gap: 8px; background: var(--blue-light); border-radius: 100px; padding: 9px 18px; font-size: 0.82rem; font-weight: 700; color: var(--blue-mid); }
+
+  #testimonials { background: var(--grey-soft); }
+  .testimonials-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-top: 48px; }
+  .testi-card { background: white; border-radius: 20px; padding: 28px; box-shadow: var(--shadow); transition: transform 0.3s, box-shadow 0.3s; }
+  .testi-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); }
+  .stars { color: #f5a623; font-size: 14px; margin-bottom: 14px; letter-spacing: 2px; }
+  .testi-card p { font-size: 0.9rem; color: var(--grey-text); line-height: 1.7; margin-bottom: 18px; font-style: italic; }
+  .testi-author { display: flex; align-items: center; gap: 12px; }
+  .testi-avatar { width: 40px; height: 40px; border-radius: 50%; background: linear-gradient(135deg, var(--blue-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 16px; font-weight: 800; color: white; }
+  .testi-name { font-size: 0.88rem; font-weight: 700; color: var(--text-dark); }
+  .testi-loc { font-size: 0.75rem; color: var(--grey-text); }
+
+  #contact { background: linear-gradient(135deg, var(--blue-deep), #1a56a0); padding: 90px 5%; }
+  .contact-layout { display: grid; grid-template-columns: 1fr 1.2fr; gap: 60px; align-items: center; }
+  .contact-info .section-title { color: white; }
+  .contact-info .section-sub { color: rgba(255,255,255,0.75); }
+  .contact-cards { display: flex; flex-direction: column; gap: 16px; margin-top: 36px; }
+  .contact-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); border-radius: 16px; padding: 20px 22px; display: flex; align-items: center; gap: 16px; transition: background 0.2s, transform 0.2s; text-decoration: none; }
+  .contact-card:hover { background: rgba(255,255,255,0.15); transform: translateX(4px); }
+  .cc-icon { font-size: 24px; width: 48px; height: 48px; border-radius: 14px; background: rgba(255,255,255,0.12); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+  .cc-label { font-size: 0.75rem; color: rgba(255,255,255,0.60); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 3px; }
+  .cc-value { font-size: 0.95rem; font-weight: 700; color: white; }
+  .map-container { border-radius: 24px; overflow: hidden; box-shadow: var(--shadow-lg); height: 340px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; }
+  .map-placeholder { text-align: center; color: rgba(255,255,255,0.6); padding: 40px; }
+  .map-placeholder .mp-icon { font-size: 48px; margin-bottom: 12px; }
+
+  footer { background: var(--blue-deep); border-top: 1px solid rgba(255,255,255,0.07); padding: 40px 5% 28px; }
+  .footer-inner { max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-brand { display: flex; align-items: center; gap: 12px; }
+  .footer-logo-icon { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--blue-bright), var(--teal)); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+  .footer-name { font-size: 0.95rem; font-weight: 800; color: white; }
+  .footer-tagline { font-size: 0.75rem; color: rgba(255,255,255,0.5); }
+  .footer-links { display: flex; gap: 24px; }
+  .footer-links a { font-size: 0.82rem; color: rgba(255,255,255,0.55); text-decoration: none; transition: color 0.2s; }
+  .footer-links a:hover { color: var(--teal); }
+  .footer-copy { font-size: 0.75rem; color: rgba(255,255,255,0.35); text-align: center; margin-top: 24px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.07); max-width: 1100px; margin-left: auto; margin-right: auto; }
+
+  .float-wa { position: fixed; bottom: 28px; right: 28px; z-index: 999; background: #25D366; color: white; width: 60px; height: 60px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 28px; text-decoration: none; box-shadow: 0 6px 24px rgba(37,211,102,0.5); transition: transform 0.25s; animation: pulse-wa 3s ease-in-out infinite; }
+  .float-wa:hover { transform: scale(1.1); }
+  @keyframes pulse-wa { 0%, 100% { box-shadow: 0 6px 24px rgba(37,211,102,0.5); } 50% { box-shadow: 0 6px 32px rgba(37,211,102,0.8), 0 0 0 12px rgba(37,211,102,0.12); } }
+
+  .fade-up { opacity: 0; transform: translateY(28px); transition: opacity 0.65s ease, transform 0.65s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  @media (max-width: 900px) {
+    .hero-content { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .services-grid, .about-layout, .contact-layout, .order-layout { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr 1fr; }
+    .nav-links { display: none; }
+    .nav-links.open { display: flex; flex-direction: column; position: fixed; top: 64px; left: 0; right: 0; background: white; padding: 24px; gap: 20px; box-shadow: 0 8px 32px rgba(0,0,0,0.12); }
+    .hamburger { display: flex; }
+    .nav-cta { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+    .pricing-table-header, .pricing-row { grid-template-columns: 1.5fr 1fr 1fr; gap: 8px; }
+    .pr-desc { display: none; }
+  }
+  @media (max-width: 600px) {
+    section { padding: 60px 5%; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .order-form { padding: 28px 20px; }
+    .pricing-row, .pricing-table-header { padding: 16px 20px; }
+  }
+</style>
+</head>
+<body>
+
+<a href="https://wa.me/919XXXXXXXXX?text=Hello!%20I%20want%20to%20place%20an%20order%20with%20VKP%20Services." class="float-wa" title="Order on WhatsApp">💬</a>
+
+<nav>
+  <a href="#home" class="nav-logo">
+    <div class="nav-logo-icon">💧</div>
+    <div class="nav-logo-text">VKP <span>Services</span></div>
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#order">Order</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#order" class="nav-cta">Order Now →</a>
+  <button class="hamburger" id="hamburger" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<section id="home">
+  <div class="drops-container" id="dropsContainer"></div>
+  <div class="hero-bg-blobs">
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+  </div>
+  <div class="hero-content">
+    <div class="hero-left">
+      <div class="hero-badge">Serving Cheyyur & Nearby Areas</div>
+      <h1 class="hero-title">VKP Water Can &<br><span class="accent">Laundry Services</span></h1>
+      <p class="hero-tagline">"Pure Water &amp; Perfect Press –<br>Delivered to Your Doorstep"</p>
+      <div class="hero-pills">
+        <div class="pill"><span>💧</span>Safe Drinking Water</div>
+        <div class="pill"><span>👕</span>Expert Ironing</div>
+        <div class="pill"><span>🏠</span>Home Delivery</div>
+        <div class="pill"><span>⚡</span>Same Day Service</div>
+      </div>
+      <div class="hero-actions">
+        <a href="#order" class="btn-primary">📋 Place an Order</a>
+        <a href="https://wa.me/919XXXXXXXXX?text=Hello!" class="btn-wa">💬 WhatsApp Order</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="service-card-float">
+        <div class="scard-top">
+          <div class="scard-icon">💧</div>
+          <div><div class="scard-name">Water Can Delivery</div><div class="scard-sub">Clean & safe drinking water</div></div>
+        </div>
+        <div class="scard-price">₹40 <span>per can</span></div>
+        <div class="scard-tags"><span class="stag">🏠 Home Delivery</span><span class="stag">✅ Purified</span><span class="stag">⚡ Same Day</span></div>
+      </div>
+      <div class="service-card-float">
+        <div class="scard-top">
+          <div class="scard-icon">👔</div>
+          <div><div class="scard-name">Ironing Services</div><div class="scard-sub">Professional press & fold</div></div>
+        </div>
+        <div class="scard-price">₹5 <span>per shirt / from</span></div>
+        <div class="scard-tags"><span class="stag">👔 Shirt ₹5</span><span class="stag">👖 Pant ₹10</span><span class="stag">🥻 Saree ₹50</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats-bar">
+  <div class="stats-inner">
+    <div class="stat"><div class="stat-num">500+</div><div class="stat-label">Happy Customers</div></div>
+    <div class="stat"><div class="stat-num">₹40</div><div class="stat-label">Per Water Can</div></div>
+    <div class="stat"><div class="stat-num">Same Day</div><div class="stat-label">Delivery Available</div></div>
+    <div class="stat"><div class="stat-num">2</div><div class="stat-label">Core Services</div></div>
+  </div>
+</div>
+
+<section id="services">
+  <div class="max-w">
+    <div class="section-label fade-up">Our Services</div>
+    <div class="section-title fade-up">Everything You Need, Right at Your Door</div>
+    <p class="section-sub fade-up">Two reliable household services – clean drinking water and expert ironing – delivered with care and trust.</p>
+    <div class="services-grid">
+      <div class="service-big-card fade-up">
+        <div class="service-card-header">
+          <span class="service-card-header-icon">💧</span>
+          <h3>Water Can Delivery</h3>
+          <p>Clean, purified, and safe drinking water delivered directly to your home or office.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="feature-list">
+            <li>Purified and safe drinking water</li>
+            <li>20-litre cans – standard size</li>
+            <li>Home & office delivery</li>
+            <li>Same-day delivery available</li>
+            <li>Regular subscription option</li>
+            <li>Hygienic can cleaning & refill</li>
+          </ul>
+          <div class="price-tag">₹40 <span class="per">per can</span></div>
+          <br><a href="#order" class="btn-primary" style="margin-top:16px;display:inline-flex;">Order Water Can →</a>
+        </div>
+      </div>
+      <div class="service-big-card fade-up">
+        <div class="service-card-header teal-theme">
+          <span class="service-card-header-icon">👔</span>
+          <h3>Ironing Services</h3>
+          <p>Professional ironing for shirts, pants, sarees and more. Crisp and clean every time.</p>
+        </div>
+        <div class="service-card-body">
+          <ul class="feature-list">
+            <li>Shirt ironing – neat collar & sleeves</li>
+            <li>Pant / trouser pressing</li>
+            <li>Saree folding & ironing</li>
+            <li>All fabric types handled with care</li>
+            <li>Pickup & drop available on request</li>
+            <li>Quick turnaround time</li>
+          </ul>
+          <div style="display:flex;gap:16px;flex-wrap:wrap;">
+            <div><div class="price-tag" style="font-size:1.4rem;">₹5</div><div style="font-size:0.75rem;color:var(--grey-text);">Shirt</div></div>
+            <div><div class="price-tag" style="font-size:1.4rem;">₹10</div><div style="font-size:0.75rem;color:var(--grey-text);">Pant</div></div>
+            <div><div class="price-tag" style="font-size:1.4rem;">₹50</div><div style="font-size:0.75rem;color:var(--grey-text);">Saree</div></div>
+          </div>
+          <a href="#order" class="btn-primary" style="margin-top:20px;display:inline-flex;background:linear-gradient(135deg,#0a4060,#0db6c9);color:white;">Book Ironing →</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="max-w">
+    <div class="section-center">
+      <div class="section-label fade-up">Pricing</div>
+      <div class="section-title fade-up">Simple, Transparent Pricing</div>
+      <p class="section-sub fade-up">No hidden charges. What you see is what you pay.</p>
+    </div>
+    <div class="pricing-table fade-up">
+      <div class="pricing-table-header">
+        <span>Service</span><span>Category</span><span>Price</span>
+      </div>
+      <div class="pricing-row">
+        <div class="pr-name"><div class="pr-icon">💧</div><div><div class="pr-label">Water Can</div><div class="pr-desc">20-litre purified water can</div></div></div>
+        <div><span class="pr-category cat-water">Water</span></div>
+        <div class="pr-price">₹40 / can</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pr-name"><div class="pr-icon">👔</div><div><div class="pr-label">Shirt Ironing</div><div class="pr-desc">Full shirt – collar, cuff, body</div></div></div>
+        <div><span class="pr-category cat-iron">Ironing</span></div>
+        <div class="pr-price">₹5 / piece</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pr-name"><div class="pr-icon">👖</div><div><div class="pr-label">Pant / Trouser</div><div class="pr-desc">Full pant with sharp crease</div></div></div>
+        <div><span class="pr-category cat-iron">Ironing</span></div>
+        <div class="pr-price">₹10 / piece</div>
+      </div>
+      <div class="pricing-row">
+        <div class="pr-name"><div class="pr-icon">🥻</div><div><div class="pr-label">Saree</div><div class="pr-desc">Full saree ironing & folding</div></div></div>
+        <div><span class="pr-category cat-iron">Ironing</span></div>
+        <div class="pr-price">₹50 / piece</div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:36px;">
+      <p style="font-size:0.85rem;color:var(--grey-text);margin-bottom:20px;">💡 Bulk discounts available. Call us to know more.</p>
+      <a href="#order" class="btn-primary" style="background:linear-gradient(135deg,var(--blue-bright),var(--teal));color:white;box-shadow:0 6px 20px rgba(41,121,232,0.35);">Place Your Order Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="order">
+  <div class="max-w">
+    <div class="section-label fade-up">Order Now</div>
+    <div class="section-title fade-up">Place Your Order in Seconds</div>
+    <div class="order-layout">
+      <div class="order-info fade-up">
+        <div class="info-card"><div class="info-card-icon ic-blue">⚡</div><div><h4>Fast Delivery</h4><p>Water cans same day. Ironing within 24 hours.</p></div></div>
+        <div class="info-card"><div class="info-card-icon ic-green">🏠</div><div><h4>Doorstep Service</h4><p>We come to you – just call or fill the form.</p></div></div>
+        <div class="info-card"><div class="info-card-icon ic-gold">💯</div><div><h4>Quality Guaranteed</h4><p>Clean water and neatly pressed clothes, every time.</p></div></div>
+        <a href="https://wa.me/919XXXXXXXXX?text=Hello%20VKP%20Services!%20I%20want%20to%20place%20an%20order." class="wa-order-btn">
+          <span style="font-size:26px">💬</span>
+          <div><div style="font-size:0.75rem;opacity:0.85;font-weight:500;">Prefer WhatsApp?</div><div>Order via WhatsApp</div></div>
+          <span style="margin-left:auto">→</span>
+        </a>
+      </div>
+      <div class="order-form fade-up">
+        <h3>📋 Book a Service</h3>
+        <p class="form-sub">Fill the form and we'll call you to confirm.</p>
+        <form id="orderForm" onsubmit="submitOrder(event)">
+          <div class="form-row">
+            <div class="form-group"><label>Your Name <span>*</span></label><input type="text" placeholder="e.g. Ravi Kumar" required></div>
+            <div class="form-group"><label>Phone Number <span>*</span></label><input type="tel" placeholder="+91 XXXXX XXXXX" required></div>
+          </div>
+          <div class="form-group"><label>Delivery Address <span>*</span></label><textarea placeholder="House No, Street, Area, Cheyyur..." required></textarea></div>
+          <div class="form-group">
+            <label>Select Service <span>*</span></label>
+            <div class="service-toggle">
+              <input type="radio" name="service" id="svc-water" class="toggle-opt" value="Water Can" required>
+              <label for="svc-water" class="toggle-label">💧 Water Can</label>
+              <input type="radio" name="service" id="svc-iron" class="toggle-opt" value="Ironing">
+              <label for="svc-iron" class="toggle-label">👔 Ironing</label>
+              <input type="radio" name="service" id="svc-both" class="toggle-opt" value="Both">
+              <label for="svc-both" class="toggle-label">✨ Both</label>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Quantity / Pieces</label><input type="number" placeholder="e.g. 2 cans / 5 shirts" min="1"></div>
+            <div class="form-group"><label>Preferred Time</label>
+              <select>
+                <option>Any time</option>
+                <option>Morning (8am – 12pm)</option>
+                <option>Afternoon (12pm – 4pm)</option>
+                <option>Evening (4pm – 7pm)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group"><label>Special Instructions</label><input type="text" placeholder="Any notes for us..."></div>
+          <button type="submit" class="submit-btn">✅ Confirm My Order</button>
+        </form>
+        <div class="success-msg" id="successMsg">
+          <span class="check">🎉</span>
+          <p>Order received! We'll call you shortly to confirm.</p>
+          <p style="margin-top:6px;font-weight:400;color:#0a7a3a;">Thank you for choosing VKP Services!</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="max-w">
+    <div class="about-layout">
+      <div class="about-visual fade-up">
+        <div class="about-card-main">
+          <div class="big-num">VKP</div>
+          <p style="font-size:1.1rem;font-weight:700;color:white;margin-bottom:12px;">Water Can & Laundry Services</p>
+          <p>Trusted by families across Cheyyur for clean water and crisp clothes – every day.</p>
+          <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap;">
+            <div style="background:rgba(255,255,255,0.12);border-radius:12px;padding:12px 16px;text-align:center;"><div style="font-size:1.5rem;font-weight:800;color:#4aeac5;">500+</div><div style="font-size:0.72rem;color:rgba(255,255,255,0.65);">Customers</div></div>
+            <div style="background:rgba(255,255,255,0.12);border-radius:12px;padding:12px 16px;text-align:center;"><div style="font-size:1.5rem;font-weight:800;color:#4aeac5;">5★</div><div style="font-size:0.72rem;color:rgba(255,255,255,0.65);">Rating</div></div>
+            <div style="background:rgba(255,255,255,0.12);border-radius:12px;padding:12px 16px;text-align:center;"><div style="font-size:1.5rem;font-weight:800;color:#4aeac5;">2+</div><div style="font-size:0.72rem;color:rgba(255,255,255,0.65);">Years Serving</div></div>
+          </div>
+        </div>
+        <div class="about-badge-float">
+          <span style="font-size:28px">🏆</span>
+          <div><strong style="display:block;font-size:0.9rem;font-weight:800;color:var(--blue-deep);">Local Favourite</strong><span style="font-size:0.75rem;color:var(--grey-text);">Cheyyur, Tamil Nadu</span></div>
+        </div>
+      </div>
+      <div class="about-content fade-up">
+        <div class="section-label">About Us</div>
+        <div class="section-title">Built on Trust,<br>Driven by Service</div>
+        <p>VKP Water Can & Laundry Services started with a simple mission – to make daily life easier for families in Cheyyur. We understand that clean water and well-pressed clothes are daily necessities.</p>
+        <p>Our business is <strong>family-run, locally rooted</strong>, and committed to quality. Every can is purified and safe. Every piece of clothing comes back crisp and ready to wear.</p>
+        <p>We believe in <strong>honest pricing, prompt service, and long-term relationships</strong> with our customers.</p>
+        <div class="value-chips">
+          <span class="chip">✅ Trusted Quality</span>
+          <span class="chip">🚀 Fast Service</span>
+          <span class="chip">💧 Pure Water</span>
+          <span class="chip">👔 Expert Ironing</span>
+          <span class="chip">🤝 Local & Honest</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="testimonials">
+  <div class="max-w">
+    <div class="section-center">
+      <div class="section-label fade-up">Testimonials</div>
+      <div class="section-title fade-up">What Our Customers Say</div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testi-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p>"VKP water cans are delivered so promptly! The water is very clean and price is reasonable. We've been ordering for 6 months now."</p>
+        <div class="testi-author"><div class="testi-avatar">R</div><div><div class="testi-name">Ramya S.</div><div class="testi-loc">Cheyyur</div></div></div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p>"The ironing service is excellent. My husband's office shirts come back perfectly pressed every time. Such a time saver!"</p>
+        <div class="testi-author"><div class="testi-avatar">P</div><div><div class="testi-name">Priya M.</div><div class="testi-loc">Cheyyur</div></div></div>
+      </div>
+      <div class="testi-card fade-up">
+        <div class="stars">★★★★★</div>
+        <p>"Very affordable and reliable. I order both water and ironing together – super convenient. WhatsApp ordering makes it easier!"</p>
+        <div class="testi-author"><div class="testi-avatar">A</div><div><div class="testi-name">Arjun K.</div><div class="testi-loc">Cheyyur</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="max-w contact-layout">
+    <div class="contact-info fade-up">
+      <div class="section-label" style="color:var(--teal)">Get in Touch</div>
+      <div class="section-title">Ready to Order?<br>Contact Us!</div>
+      <p class="section-sub">Call us, WhatsApp us, or visit us. Always happy to help.</p>
+      <div class="contact-cards">
+        <a href="tel:+918056254565" class="contact-card"><div
+             class="cc-icon">📞</div><div><div class="cc-label">Call Us</div><div class="cc-value">+91 8056254565</div></div></a>
+        <a href="https://wa.me/918056254565" class="contact-card"><div class="cc-icon">💬</div><div><div class="cc-label">WhatsApp</div><div class="cc-value">+91 9XXX XXX XXX</div></div></a>
+        <div class="contact-card"><div class="cc-icon">📍</div><div><div class="cc-label">Location</div><div class="cc-value">Cheyyur, Tamil Nadu</div></div></div>
+        <div class="contact-card"><div class="cc-icon">🕐</div><div><div class="cc-label">Working Hours</div><div class="cc-value">Mon–Sat: 7am – 8pm</div></div></div>
+      </div>
+    </div>
+    <div class="map-container fade-up">
+      <div class="map-placeholder">
+        <div class="mp-icon">🗺️</div>
+        <p style="font-size:1rem;font-weight:700;color:white;margin-bottom:8px;">chennai, Tamil Nadu</p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d15547.23908820133!2d80.26558384999998!3d13.047777349999999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2sin!4v1774083271909!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-brand">
+      <div class="footer-logo-icon">💧</div>
+      <div><div class="footer-name">VKP Water Can & Laundry</div><div class="footer-tagline">Pure Water & Perfect Press – Delivered to Your Doorstep</div></div>
+    </div>
+    <div class="footer-links">
+      <a href="#home">Home</a><a href="#services">Services</a><a href="#pricing">Pricing</a>
+      <a href="#order">Order</a><a href="#about">About</a><a href="#contact">Contact</a>
+    </div>
+  </div>
+  <div class="footer-copy">© 2025 VKP Water Can & Laundry Services, Triplicane, chennai, Tamil Nadu. All rights reserved.</div>
+</footer>
+
+<script>
+  // Animated rain drops
+  const container = document.getElementById('dropsContainer');
+  for (let i = 0; i < 18; i++) {
+    const drop = document.createElement('div');
+    drop.className = 'drop';
+    drop.style.left = Math.random() * 100 + '%';
+    drop.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    drop.style.animationDelay = (Math.random() * 4) + 's';
+    drop.style.width = (Math.random() * 4 + 4) + 'px';
+    drop.style.height = (Math.random() * 6 + 7) + 'px';
+    container.appendChild(drop);
+  }
+
+  // Mobile nav toggle
+  function toggleNav() {
+    document.getElementById('navLinks').classList.toggle('open');
+  }
+  document.querySelectorAll('.nav-links a').forEach(a => {
+    a.addEventListener('click', () => document.getElementById('navLinks').classList.remove('open'));
+  });
+
+  // Scroll animations
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('visible'), i * 80);
+        observer.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+  // Order form
+  function submitOrder(e) {
+    e.preventDefault();
+    document.getElementById('orderForm').style.display = 'none';
+    document.getElementById('successMsg').style.display = 'block';
+    document.getElementById('successMsg').scrollIntoView({ behavior: 'smooth', block: 'center' });
+  }
+</script>
+</body>
+</html>
